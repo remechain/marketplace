@@ -1,0 +1,61 @@
+include ../mixins/mixins
+header.header
+	+space
+	.header__up
+		+space
+		div.container.header__container
+			+space
+			// Блок с логотипом
+			.header__b-logo
+				// Логотип
+				a(href="/")
+					img(src="/img/logo.png", alt="Логотип").header__logo
+			+space
+			.header__navigation.wrap
+				// Навигация
+				nav
+					ul.nav.header__nav.wrap-i
+						li.header__item
+							a(href="/",class="header__link")= 'Металлы'
+						li.header__item
+							a(href="/",class="header__link")= 'Для бизнеса'
+						li.header__item
+							a(href="/",class="header__link")= 'Для сдатчиков'
+						li.header__item
+							a(href="/",class="header__link")= 'Блог'
+				
+				+space
+				// Разделитель
+				.header__divider
+
+				+space
+				// Локация
+				.header__location.wrap-i
+					.icon-mark
+					.text Какой-то город
+				
+				+space
+				// Разделитель
+				.header__divider
+
+				+space
+				// Социальные сети
+				.social.header__social.wrap-i
+					a(href="/").social__link
+						img(src="https://placeimg.com/640/480/any", alt="", class="social__img")
+					a(href="/").social__link
+						img(src="https://placeimg.com/640/480/any", alt="", class="social__img")
+					a(href="/").social__link
+						img(src="https://placeimg.com/640/480/any", alt="", class="social__img")
+					a(href="/").social__link
+						img(src="https://placeimg.com/640/480/any", alt="", class="social__img")
+				
+				+space
+				// Разделитель
+				.header__divider
+				
+				+space
+				// Вход
+				+btn-ni('base','orange','left','Вход','account','modal','header__btn-none')
+
+			+space

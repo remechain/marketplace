@@ -1,0 +1,89 @@
+//- Ctrl+D - быстрый переход *(ST3)
+//- -------------------------------
+//- -------------------------------
+//- INPUT: Text
+//- INPUT: btn's
+//- -------------------------------
+
+//- INPUT: Text
+
+	//- 1: id input'a
+	//- 2: Текст label
+	//- 3: email/tel/password/url/text/submit
+	//- 4: Текст в placeholder'e
+	//- 5: Текст ошибки
+	//- 6: vertical/horizontal
+	//- 7: mb-10/mb-20/mtb-10
+
+	//- Вызов:
+	//- +form-input('name','Имя','text','Ваше имя','Ошибка','vertical','cls')
+
+mixin form-input(id,text_label,type,placeholder,text_error,dir,cls)
+	+space
+	// Блок с инпутом
+	div(class="form__block form__block_"+dir+" form__block_"+cls+"")
+		if text_label !== ''
+			+space
+			// label
+			label(for=id,class="form__label form__label_base")= text_label
+		+space
+		if type == 'password'
+			// Внутренний блок
+			.form__inline
+				input(id=id,type=type,name=id,class="form__input form__input_base form__input_pass",placeholder=placeholder)
+				+space
+				// Изображение ошибки и текст ошибки
+				.form__error
+					.icon-attention_noactive
+				.form__error-message= text_error
+				+space
+				// Блок с глазом для пароля
+				.form__pass
+					.form__oko.icon-oko_off
+			+space
+		else
+			// Внутренний блок
+			.form__inline
+				input(id=id,type=type,class="form__input form__input_base" placeholder=placeholder)
+				+space
+				// Изображение ошибки и текст ошибки
+				.form__error
+					.icon-attention_noactive
+				.form__error-message= text_error
+			+space
+	+space
+
+
+
+//- INPUT: btn's
+
+	//- 1: id input'a
+	//- 2: Текст label
+	//- 3: radio/checkbox
+	//- 4: Имя инпута
+	//- 5: aquamarine/orange
+	//- 6: Значение инпута
+	//- 7: Class
+
+	//- Вызов:
+	//- +form-btn('name','Имя','radio','fruits','orange','Фрукт','Class')
+
+mixin form-btn(id,text_label,type,name,theme,value,cls)
+	if cls == ''
+		+space
+		// Блок с инпутом-btn's
+		div(class="form__block form__block_horizontal")
+			// label
+			label(for=id,class="form__label form__label_"+type+"")= text_label
+			// input
+			input(id=id,type=type,class="form__input form__input_"+type+" form__input_"+type+"-"+theme+"", name=name, value=value)
+		+space
+	else	
+		+space
+		// Блок с инпутом-btn's
+		div(class="form__block form__block_horizontal "+cls+"")
+			// label
+			label(for=id,class="form__label form__label_"+type+"")= text_label
+			// input
+			input(id=id,type=type,class="form__input form__input_"+type+" form__input_"+type+"-"+theme+"", name=name, value=value)
+		+space

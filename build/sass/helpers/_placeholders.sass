@@ -1,0 +1,71 @@
+@import ../base/_base
+
+%wrap
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  width: 100%
+  margin-right: auto
+  margin-left: auto
+
+  +min-screen(1600px)
+    max-width: 1600px
+    padding-left: 32px
+    padding-right: 32px
+
+
+  +screen(1440px, 1600px)
+    max-width: 1440px
+    padding-left: 48px
+    padding-right: 48px
+
+
+  +screen(1280px, 1440px)
+    max-width: 1280px
+    padding-left: 16px
+    padding-right: 16px
+
+
+  +screen(1024px, 1280px)
+    max-width: 1024px
+    padding-left: 32px
+    padding-right: 32px
+
+%row
+  flex-direction: row
+
+%col
+  flex-direction: column
+
+%bigtext
+  font-size: $textXL
+  line-height: 24px
+
+%mediumtext
+  font-size: $textM
+  line-height: 24px
+
+%smalltext
+  font-size: $textS
+  line-height: 21px
+
+
+%inline
+  position: relative
+  display: -webkit-inline-flex
+  display: -moz-inline-flex
+  display: -ms-inline-flex
+  display: -o-inline-flex
+  display: inline-flex
+
+
+
+%flex
+  position: relative
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex

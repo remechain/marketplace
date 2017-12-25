@@ -1,0 +1,475 @@
+.main
+  &_base
+    .main__header
+      padding-top: 80px
+      padding-bottom: 135px
+
+  &_landing
+    .main__header
+      height: 592px
+
+      .container
+        height: inherit
+        justify-content: center
+
+  &__header
+    position: relative
+    background: url(/frontend/web/img/header.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+
+    .container
+      @extend %col
+
+      align-items: center
+
+      &__block
+        text-align: center
+
+        &:first-child()
+          margin-bottom: 28px
+
+    .btn
+      margin-top: 43px
+      padding: 20px 36px
+      border-radius: 4px
+
+    .text
+      font-size: 24px
+      line-height: 32px
+      color: #fff
+
+  &__search
+    position: relative
+    margin-top: -50px
+    margin-bottom: 45px
+
+    .section
+      flex: 1
+      background-color: #69c8d0
+      padding: 32px
+
+    .form
+      @extend %row
+
+      justify-content: space-between
+
+      &__block
+        width: 100%
+        margin-right: 16px
+
+    .btn
+      border-radius: 4px
+      padding: 14px 32px 12px
+
+  &__useful,
+  &__forwhom
+    background-color: #f5f6fa
+
+    .container
+      @extend %col
+
+      &__header
+        @extend %col
+
+        text-align: center
+        margin-bottom: 32px
+
+        .title
+          margin-bottom: 16px
+
+        .text,
+        .title
+          color: #242734
+
+  &__useful
+    padding-top: 65px
+    padding-bottom: 72px
+
+    &.sell
+      .container
+        &__content
+          flex-wrap: wrap
+
+        &__block
+          +grid(4, 1)
+
+          +first(3)
+            margin-bottom: 65px
+
+    &.buy
+      .container
+        &__content
+          flex-wrap: wrap
+
+        &__block
+          @extend %col
+
+          +grid(3, 1)
+
+          .icon
+            margin-bottom: 32px
+
+    .icon
+      font-size: 68px
+      margin-right: 38px
+
+  &__forwhom
+    padding-top: 60px
+
+    .section
+      @extend %col
+
+      +grid(6, 1)
+
+      height: 350px
+      background-color: #f5f6fa
+      padding-bottom: 42px
+      padding-left: 37px
+      align-items: flex-start
+      justify-content: flex-end
+
+      .title
+        margin-bottom: 24px
+        color: #fff
+
+      &:first-child
+        background: url(/frontend/web/img/landing_1.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+
+      &:last-child
+        background: url(/frontend/web/img/landing_2.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+
+    .btn
+      border-radius: 4px
+      padding: 9px 15px
+
+  &__best-playground
+    .container
+      @extend %col
+
+      &__header
+        +grid(12, 1)
+
+        margin-bottom: 32px
+
+    .cards
+      &__block
+        +grid(3, 1)
+
+      &__map
+        position: relative
+
+        img
+          width: 100%
+          max-height: 184px
+          margin-bottom: -3px
+
+      &__description
+        padding-top: 28px
+        padding-bottom: 28px
+        padding-left: 16px
+        padding-right: 16px
+
+      &__item
+        margin-top: 24px
+        align-items: center
+
+        [class^='icon']
+          max-width: 16px
+          width: 100%
+          margin-right: 24px
+          color: $gray
+          text-align: center
+
+        .text
+          color: $gray
+
+  &__statistics
+    margin-top: 48px
+    margin-bottom: 48px
+
+    .section
+      &_left
+        +grid(9, 1)
+
+        padding-top: 40px
+        padding-bottom: 40px
+        align-items: center
+
+      &_right
+        +grid(3, 1)
+
+      &__block
+        +grid(3, 0)
+
+        @extend %col
+
+        align-items: center
+        padding-top: 16px
+        padding-bottom: 16px
+
+        &_1
+          .section__icon
+            color: $aqua-dark
+
+        &_2
+          margin-right: 32px
+          margin-left: 32px
+
+          &:before,
+          &:after
+            content: " "
+            position: absolute
+            width: 1px
+            height: 100%
+            top: 0
+            background-color: #dcdde1
+
+          &:before
+            left: -16px
+
+          &:after
+            right: -16px
+
+          .section__icon
+            color: $orange-light-2
+
+        &_3
+          .section__icon
+            color: $blue-2
+
+        &_1,
+        &_2,
+        &_3
+          .section__icon
+            font-size: 36px
+            margin-bottom: 24px
+
+      &__amount
+        +ffs("regular", 54px)
+
+        color: $gray-dark-2
+        margin-bottom: 18px
+
+      &__caption
+        +ffs("regular", 14px)
+
+        color: $gray-dark
+        text-transform: uppercase
+
+  &__best-price
+    background: url(/frontend/web/img/best_price.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    padding-top: 48px
+    padding-bottom: 48px
+
+    .container
+      @extend %col
+
+      &__header
+        +grid(12, 1)
+
+        justify-content: space-between
+        color: #fff
+        margin-bottom: 30px
+
+    .texticon
+      align-items: baseline
+      color: #61b2b9
+
+    .texticon__icon
+      margin-left: 12px
+      margin-right: 12px
+
+    .table
+      +grid(12, 1)
+
+      justify-content: space-between
+      overflow: hidden
+      border-radius: 4px
+      background: url(/frontend/web/img/table.jpg)
+      background-position-y: -4px
+      background-repeat: no-repeat
+      background-size: cover
+
+      &__row:not(:last-child),
+      &__header
+        border-bottom: 1px solid #465a6d
+
+      &__header
+        padding-top: 20px
+        padding-bottom: 20px
+
+      &__row
+        padding-top: 30px
+        padding-bottom: 30px
+
+        &_chart
+
+      &__column
+        &_one
+          +grid(5, 0)
+
+          .table__header
+            padding-left: 48px
+
+          .table__row
+            padding-left: 24px
+            margin-left: 24px
+
+        &_two
+          +grid(2, 0)
+
+          text-align: right
+
+          .table__header,
+          .table__row
+            padding-right: 42px
+
+        &_three
+          +grid(2, 0)
+
+          text-align: right
+          background-color: rgba(0, 0, 0, 0.3)
+
+          .table__header,
+          .table__row
+            padding-right: 24px
+
+        &_four
+          +grid(3, 0)
+
+          text-align: right
+
+          .table__header
+            padding-right: 48px
+
+          .table__row
+            justify-content: flex-end
+            align-items: flex-start
+            padding-right: 24px
+            margin-right: 24px
+
+      &__rtext
+        &_plus,
+        &_minus,
+        &_small
+          margin-top: 12px
+
+      &__icon
+        font-size: 12px
+        margin-right: 24px
+        padding-top: 6px
+
+  &__footer
+    padding-top: 48px
+    padding-bottom: 48px
+    background-color: #f5f6fa
+
+    .container
+      overflow: hidden
+
+      &__block
+        +grid(6, 1)
+
+        @extend %col
+
+      &__header
+        color: #242734
+        margin-bottom: 32px
+
+    .cards
+      &__block
+        +grid(3, 0)
+
+        @extend %col
+
+        align-items: flex-start
+        border-radius: 4px
+        box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.4)
+        padding-top: 24px
+        padding-bottom: 32px
+        padding-left: 16px
+        padding-right: 16px
+
+        &_1
+          margin-right: 32px
+          background: url(/frontend/web/img/landing_1_small.jpg)
+          background-size: cover
+          background-repeat: no-repeat
+
+          .notification
+            background-color: #59a8af
+
+          .cards__link
+            color: $aqua-light
+
+        &_2
+          background: url(/frontend/web/img/landing_2_small.jpg)
+          background-size: cover
+          background-repeat: no-repeat
+
+          .notification
+            background-color: $orange-dark
+
+          .cards__link
+            color: $orange-dark
+
+      &__description
+        .title
+          color: #fff
+          margin-bottom: 30px
+
+        .text
+          color: #fff
+          line-height: 24px
+
+      .notification
+        padding: 8px 9px
+        border-radius: 2px
+
+        +ffs(medium, 12px)
+
+        color: #fff
+        margin-bottom: 100px
+
+      &__link
+        margin-top: 24px
+        text-decoration: none
+        align-items: center
+
+        [class^="icon-"]
+          margin-left: 12px
+          font-size: 10px
+
+    .slider
+      padding: 24px 40px
+
+      &__slide
+        @extend %col
+
+        text-align: center
+
+      &__text
+        margin-bottom: 40px
+
+      .text
+        line-height: 24px
+
+        &_big
+          color: #242734
+
+        &_medium
+          color: #63686d
+
+      &__user
+        align-items: center
+        padding-bottom: 5px
+
+      &__avatar
+        margin-bottom: 24px

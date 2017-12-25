@@ -1,0 +1,65 @@
+.account-pro.wizard
+  .ui-slider-horizontal
+    border-radius: 1px
+    background-color: #a0d0d3
+    height: 2px
+
+  .ui-slider-horizontal .ui-slider-handle
+    top: -3px
+    margin-left: 0
+
+  .ui-slider-horizontal .ui-slider-range
+    top: 0
+    height: 100%
+
+  .ui-slider-horizontal .ui-slider-range-min
+    left: 0
+
+  .ui-slider-horizontal .ui-slider-range-max
+    right: 0
+
+  //  ╨Ь╨╡╨╢╨┤╤Г ╨║╤А╤Г╨╢╨║╨░╨╝╨╕
+  .ui-widget-header
+    background-color: #fc7565
+    font-weight: bold
+
+  // ╨Ъ╤А╤Г╨╢╨║╨╕
+  .ui-slider .ui-slider-handle
+    position: absolute
+    z-index: 2
+    width: 8px
+    height: 8px
+    cursor: pointer
+    -ms-touch-action: none
+    touch-action: none
+
+    // ╨Ъ╤А╤Г╨╢╨║╨╕ __ ╨Ы╨╡╨▓╤Л╨╣ ╨║╤А╤Г╨╢╨╛╨║ ╨╕ ╨┐╤А╨░╨▓╤Л╨╣ ╨║╤А╤Г╨╢╨╛╨║
+    &:nth-child(3),
+    &:nth-child(2)
+      // ╨Ъ╤А╤Г╨╢╨║╨╕ __ ╨Ы╨╡╨▓╤Л╨╣ ╨║╤А╤Г╨╢╨╛╨║ ╨╕ ╨┐╤А╨░╨▓╤Л╨╣ ╨║╤А╤Г╨╢╨╛╨║ -- ╨Т╤А╨╡╨╝╤П
+      &:before
+        position: absolute
+        top: -32px
+        left: -13px
+
+    // ╨Ъ╤А╤Г╨╢╨║╨╕ __ ╨Ы╨╡╨▓╤Л╨╣ ╨║╤А╤Г╨╢╨╛╨║
+    &:nth-child(2)
+      // ╨Ъ╤А╤Г╨╢╨║╨╕ __ ╨Ы╨╡╨▓╤Л╨╣ ╨║╤А╤Г╨╢╨╛╨║ -- ╨Т╤А╨╡╨╝╤П
+      &:before
+        content: attr(data-time-first)
+
+    // ╨Ъ╤А╤Г╨╢╨║╨╕ __ ╨Я╤А╨░╨▓╤Л╨╣ ╨║╤А╤Г╨╢╨╛╨║
+    &:nth-child(3)
+      // ╨Ъ╤А╤Г╨╢╨║╨╕ __ ╨Я╤А╨░╨▓╤Л╨╣ ╨║╤А╤Г╨╢╨╛╨║ -- ╨Т╤А╨╡╨╝╤П
+      &:before
+        content: attr(data-time-second)
+
+  .ui-state-default
+    +ffs(regular, 14px)
+
+    color: #9b9b9b
+    background: #fc7565
+    font-weight: normal
+
+    &:hover
+      color: #9b9b9b

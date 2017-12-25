@@ -1,0 +1,115 @@
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th
+  margin: 0
+  padding: 0
+  border: none
+  border-spacing: 0
+
+.ui-datepicker-header
+  @extend %flex
+
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  margin-right: 8px
+  margin-left: 16px
+  margin-bottom: 18px
+
+thead
+  margin-bottom: 16px
+
+.ui-datepicker-next,
+.ui-datepicker-prev
+  @extend %flex
+
+  justify-content: center
+  align-items: center
+  border-radius: 100px
+
+  +size(28px, 28px)
+
+  font-size: 12px
+  font-family: 'iconmoon' !important
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  cursor: pointer
+
+
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+  &:hover
+    border: 1px solid #f26d5d
+
+.ui-datepicker-prev
+  order: 1
+
+  &:before
+    content: "\e903"
+
+.ui-datepicker-title
+  flex: 1
+  order: 2
+
+  +ffs("regular", 16px)
+
+  color: #21282f
+
+.ui-datepicker-next
+  order: 3
+
+  &:before
+    content: "\e904"
+    margin-right: -3px
+
+.ui-datepicker-calendar
+  width: 100%
+
+.ui-datepicker
+  td
+    text-align: center
+    height: 30px
+
+    a
+      font-family: regular
+      font-size: 14px
+
+      +size(24px, 24px)
+
+      display: inline-block
+      text-decoration: none
+      padding: 5px 3px
+
+  th
+    width: 15%
+
+    +ffs("regular", 14px)
+
+    color: #808080
+    padding-bottom: 16px
+
+.ui-state
+  &-default,
+  &-none
+    border-radius: 100%
+
+    &:hover
+      background-color: #ffa095
+      color: #fff
+
+  &-default
+    color: #63686d
+
+  &-none
+    color: #c4cad0
+
+  &-active
+    background-color: $orange_dark
+    color: #fff

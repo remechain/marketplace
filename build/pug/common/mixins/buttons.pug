@@ -1,0 +1,144 @@
+//- Ctrl+D - быстрый переход *(ST3)
+//- -------------------------------
+//- -------------------------------
+//- Кнопка-закрыть
+//- Кнопка с формой
+//- Кнопка без формы
+//- Кнопка с иконкой
+//- Кнопка без формы с иконкой
+//- -------------------------------
+
+
+//- Кнопка-закрыть
+
+	//- 1: round/square
+	//- 2: Тема: blue/orange/aquamarine/default
+	//- 3: id
+	//- 4: дополнительный класс: например, 'modal__cls'
+	//- 5: Иконка: account/notification/close/filter and e.t.c. --> scss/base/_icons.scss 
+
+	//- Вызов:
+	//- +btn-c('round', 'default', 'id', 'cls', 'icon')
+
+mixin btn-c(type, theme, id, cls, icon)
+	if id == ''
+		button(class="btn btn_icon-"+type+" btn_theme-"+theme+" icon-"+icon+" "+cls+"")
+	else if cls == ''
+		button(class="btn btn_icon-"+type+" btn_theme-"+theme+" icon-"+icon+"" id=id)
+	else if cls == '' && id == ''
+		button(class="btn btn_icon-"+type+" btn_theme-"+theme+" icon-"+icon+"")
+	else
+		button(class="btn btn_icon-"+type+" btn_theme-"+theme+" icon-"+icon+" "+cls+"" id=id)
+
+//- Кнопка с формой
+
+	//- 1: Вид: base/big 
+	//- 2: Тема: blue/orange/aquamarine/default
+	//- 3: Любой текст
+	//- 4: id
+	//- 5: дополнительный класс: например, 'modal__cls'
+	//- 6: url для перехода
+
+	//- Вызов:
+	//- +btn('base','blue','button','id', 'cls', 'url')
+
+mixin btn(type, theme, txt, id, cls, link)
+	if id == '' 
+		button(class="btn btn_"+type+" btn_theme-"+theme+" "+cls+"" onclick="location.href='"+link+"';")
+			span #{txt}
+	else if link == ''
+		button(class="btn btn_"+type+" btn_theme-"+theme+" "+cls+"" id=id)
+			span #{txt}
+	else if cls == ''
+		button(class="btn btn_"+type+" btn_theme-"+theme+"" id={id} onclick="location.href='"+link+"';")
+			span #{txt}
+	else if cls == '' && id == '' && link == ''
+		button(class="btn btn_"+type+" btn_theme-"+theme+"")
+			span #{txt}
+	else
+		button(class="btn btn_"+type+" btn_theme-"+theme+" "+cls+"" id={id} onclick="location.href='"+link+"';")
+			span #{txt}
+
+
+//- Кнопка без формы
+
+	//- 1: Вид: base/big 
+	//- 2: Тема: blue/orange/aquamarine/default
+	//- 3: Любой текст
+	//- 4: id
+	//- 5: дополнительный класс: например, 'modal__cls'
+	//- 6: url для перехода
+
+	//- Вызов:
+	//- +btn-n('base','blue','button','id', 'cls', 'url')
+
+mixin btn-n(type, theme, txt, id, cls, link)
+	if id == '' 
+		button(class="btn-none btn-none_"+type+" btn-none_theme-"+theme+" "+cls+"" onclick="location.href='"+link+"';")
+			span #{txt}
+	else if cls == ''
+		button(class="btn-none btn-none_"+type+" btn-none_theme-"+theme+"" id={id} onclick="location.href='"+link+"';")
+			span #{txt}
+	else if cls == '' && id == ''
+		button(class="btn-none btn-none_"+type+" btn-none_theme-"+theme+"" onclick="location.href='"+link+"';")
+			span #{txt}
+	else
+		button(class="btn-none btn-none_"+type+" btn-none_theme-"+theme+" "+cls+"" id={id} onclick="location.href='"+link+"';")
+			span #{txt}
+
+
+//- Кнопка с иконкой
+
+	//- 1: Вид: base/big 
+	//- 2: Тема: blue/orange/aquamarine/default
+	//- 3: Направление: left/right
+	//- 4: Любой текст
+	//- 5: Иконка: account/notification/close/filter and e.t.c. --> scss/base/_icons.scss
+	//- 6: id
+	//- 5: дополнительный класс: например, 'modal__cls'
+
+	//- Вызов:
+	//- +btn-i('base','blue','left','button','account','id', 'cls')
+
+mixin btn-i(type, theme, dir, txt, view, id, cls)
+	if id == ''
+		button(class="btn btn_"+type+" btn_theme-"+theme+" btn_icon-"+dir+" icon-"+view+" "+cls+"")
+			span #{txt}
+	else if cls == ''
+		button(class="btn btn_"+type+" btn_theme-"+theme+" btn_icon-"+dir+" icon-"+view+"" id=id)
+			span #{txt}
+	else if cls == '' && id == ''
+		button(class="btn btn_"+type+" btn_theme-"+theme+" btn_icon-"+dir+" icon-"+view+"")
+			span #{txt}
+	else
+		button(class="btn btn_"+type+" btn_theme-"+theme+" btn_icon-"+dir+" icon-"+view+" "+cls+"" id=id)
+			span #{txt}
+
+
+//- Кнопка без формы с иконкой
+
+	//- 1: Вид: base/big 
+	//- 2: Тема: blue/orange/aquamarine/default
+	//- 3: Направление: left/right
+	//- 4: Любой текст
+	//- 5: Иконка: account/notification/close/filter and e.t.c. --> scss/base/_icons.scss
+	//- 6: id
+	//- 7: дополнительный класс: например, 'modal__cls'
+
+	//- Вызов:
+	//- +btn-ni('base','blue','left','button','account','id','cls')
+
+mixin btn-ni(type, theme, dir, txt, view, id, cls)
+	if id == ''
+		button(class="btn-none btn-none_"+type+" btn-none_theme-"+theme+" btn-none_icon-"+dir+" icon-"+view+" "+cls+"")
+			span #{txt}
+	else if cls == ''
+		button(class="btn-none btn-none_"+type+" btn-none_theme-"+theme+" btn-none_icon-"+dir+" icon-"+view+"" id=id)
+			span #{txt}
+	else if cls == '' && id == ''
+		button(class="btn-none btn-none_"+type+" btn-none_theme-"+theme+" btn-none_icon-"+dir+" icon-"+view+"")
+			span #{txt}
+	else
+		button(class="btn-none btn-none_"+type+" btn-none_theme-"+theme+" btn-none_icon-"+dir+" icon-"+view+" "+cls+"" id=id)
+			span #{txt}
+	

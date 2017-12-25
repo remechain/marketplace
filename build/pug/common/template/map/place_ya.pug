@@ -1,0 +1,13 @@
+// Яндекс мап
+script(script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+|<script>
+|ymaps.ready(init);
+|function init() {
+|myMap = new ymaps.Map("map2", {
+|   center: [59.939095, 30.315868],
+|   zoom: 16,
+|   behaviors:['default', 'scrollZoom'],
+|   controls: []
+|});
+|}
+|</script>

@@ -1,0 +1,291 @@
+main
+    box-shadow: inset 0 0.866px 3px 0 rgba(0, 0, 0, 0.2)
+    background-color: $gray-lighter-2
+
+.container
+    @extend %wrap
+
+.wrap
+    @extend %flex
+
+    &-i
+        @extend %inline
+
+    &_between
+        justify-content: space-between
+
+.status
+    &__header
+        align-items: center
+        justify-content: space-between
+
+    &__bar
+        border-radius: 4px
+        background-color: #d9dcdf
+        height: 8px
+        overflow: hidden
+
+    &__step
+        width: 20%
+        height: inherit
+        background-color: #405161
+
+.slider
+    position: relative
+
+.layer
+    position: absolute
+    width: 100%
+    height: 100%
+
+.categories
+    @extend %col
+
+.table
+    @extend %row
+
+    &__column
+        @extend %col
+
+    &__htext
+        line-height: 20px
+
+        &_big
+            +ffs("regular", 16px)
+
+            color: #fff
+
+        &_small
+            +ffs("regular", 14px)
+            color: #a5acb3
+
+    &__rtext
+        &_big
+            +ffs("regular", 24px)
+
+            color: #fff
+
+        &_small
+            +ffs("regular", 14px)
+
+            color: #a5acb3
+
+        &_minus
+            +ffs("medium", 14px)
+
+            color: #f26d5d
+
+        &_plus
+            +ffs("medium", 14px)
+
+            color: #69c8d0
+
+    &__icon
+        &_up
+            color: #69c8d0
+
+        &_down
+            color: #f26d5d
+
+.texticon
+    &__text
+        +ffs("regular", 14px)
+
+    &__icon
+
+.breadcrumbs
+    &__item
+        @extend %flex
+
+        align-items: center
+
+    &__link,
+    &__symbol
+        +ffs("regular", 12px)
+
+        color: #63686d
+        text-decoration: none
+
+    &__symbol
+        margin-left: 5px
+        margin-right: 5px
+
+.section
+    border-radius: 4px
+    box-shadow: 0.5px 0.866px 3px 0px rgba(0, 0, 0, 0.2)
+    background-color: #fff
+
+    &__map
+        img
+            width: 100%
+            height: auto
+
+    &__imgs
+        margin-bottom: 24px
+
+.pagination
+    height: 40px
+    overflow: hidden
+    border: 1px solid #dcdde1
+    border-radius: 2px
+
+    &__btn
+        width: 48px
+        height: inherit
+        justify-content: center
+        align-items: center
+        background-color: transparent
+        color: #3f5161
+        cursor: pointer
+
+        &:not(:last-child)
+            border-right: 1px solid #dcdde1
+
+        &:not(.prev):not(.next)
+            +ffs(regular, 14px)
+
+        &.prev,
+        &.next
+            font-size: 9px
+
+        &:hover,
+        &.active
+            background-color: #3f5161
+            color: #fff
+
+.footnote
+    width: 100%
+
+    &-aqua
+        background-color: $aqua-dark
+
+    &-blue
+        background-color: $blue
+
+    &-orange
+        background-color: $orange_dark
+
+.location
+    &__icon
+        font-size: 16px
+        color: rgb(163, 172, 181)
+
+.social
+    &__btn
+        &-mail
+            background-color: #74cdf9
+
+        &-vk
+            background-color: #648ec7
+
+        &-facebook
+            background-color: #6076bb
+
+        &-odnoklassniki
+            background-color: #fdac56
+
+    &__icon
+        &-mail
+            &:before
+                font-awesome: envelope-o
+
+        &-vk
+            &:before
+                font-awesome: vk
+
+        &-facebook
+            &:before
+                font-awesome: facebook
+
+        &-odnoklassniki
+            &:before
+                font-awesome: odnoklassniki
+
+    &__img
+        border-radius: 50%
+
+    &__text
+        +ffs(regular, 14px)
+
+.title
+    font-family: "regular"
+
+    &_main
+        font-size: $header1_main
+        line-height: 72px
+        font-weight: normal
+        color: #fff
+
+    &_vbig
+        font-size: 60px
+
+    &_big
+        font-size: 36px
+
+    &_medium
+        font-size: 24px
+
+    &_small
+        font-size: 18px
+
+.text
+    font-family: "regular"
+
+    &_big
+        font-size: 16px
+
+    &_medium
+        font-size: 14px
+
+    &_small
+        font-size: 12px
+
+    &-bold
+        font-family: "medium"
+
+        &_big
+            font-size: 16px
+
+        &_medium
+            font-size: 14px
+
+        &_small
+            font-size: 12px
+
+.product-img
+    margin-bottom: -3px
+    border-radius: 4px
+
+    &_big
+        +min-screen(1334px)
+            +size(100%, auto)
+
+
+        +max-screen(1334px)
+            +size(280px, 200px)
+
+    &_medium
+        +size(176px, 128px)
+
+    &_small
+        +size(136px, 104px)
+
+.avatar
+    border-radius: 50%
+    vertical-align: middle
+    object-fit: cover
+
+    &_biggest
+        +size(69px, 69px)
+
+    &_big
+        +size(64px, 64px)
+
+    &_medium
+        +size(48px, 48px)
+
+    &_small
+        +size(40px, 40px)
+
+.divider
+    background-color: $gray-lighter

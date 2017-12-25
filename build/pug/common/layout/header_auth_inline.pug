@@ -1,0 +1,80 @@
+include ../mixins/mixins
+//- HEADER для страниц, 
+//- где человек зарегестрирован,
+//- и в личном кабинете
+header.header
+	+space
+	.header__up
+		.container.header__container
+			+space
+			// Блок с логотипом
+			.header__b-logo
+				// Логотип
+				a(href="/")
+					img(src="/img/logo.png", alt="Логотип").header__logo
+			+space
+			.header__navigation.wrap
+				// Навигация
+				nav
+					ul.nav.header__nav.wrap-i
+						li.header__item
+							a(href="/",class="header__link")= 'Металлы'
+						li.header__item
+							a(href="/",class="header__link")= 'Для бизнеса'
+						li.header__item
+							a(href="/",class="header__link")= 'Для сдатчиков'
+						li.header__item
+							a(href="/",class="header__link")= 'Блог'
+
+				+space
+				// Разделитель
+				.header__divider
+
+				+space
+				// Локация
+				.header__location.wrap-i
+					.icon-mark
+					.text Какой-то город
+				
+				+space
+				// Разделитель
+				.header__divider
+
+				+space
+				// Социальные сети
+				.social.header__social.wrap-i
+					a(href="/").social__link
+						img(src="https://placeimg.com/640/480/any", alt="", class="social__img")
+					a(href="/").social__link
+						img(src="https://placeimg.com/640/480/any", alt="", class="social__img")
+					a(href="/").social__link
+						img(src="https://placeimg.com/640/480/any", alt="", class="social__img")
+					a(href="/").social__link
+						img(src="https://placeimg.com/640/480/any", alt="", class="social__img")
+
+				// Разделитель
+				.header__divider
+
+				+space
+				// Уведомления
+				.header__notification.wrap-i
+					.icon-notification
+						.icon-notification__number.wrap-i 5
+				+space
+				// Аватар
+				img(src="https://placeimg.com/640/480/any", alt="").avatar.avatar_small
+			+space
+	.header__down
+		.container.header__container
+			.user.header__user.wrap
+				img(src="https://placeimg.com/640/480/any", alt="").avatar.avatar_medium
+				.user__name Азаза
+			.btns.header__btns.wrap
+				button(type="button", onclick="location.href='/standart_user_account/request/1.0/';").btn-none.btn-none_base.btn-none_theme-aquamarine
+					span.text.text_medium Заявки
+				button(type="button", onclick="location.href='/standart_user_account/setting';").btn-none.btn-none_base.btn-none_theme-default
+					span.text.text_medium Настройки
+				.header__divider
+				button(type="button").btn-none.btn-none_base.btn-none_theme-orange
+					span.icon-on_off
+					span.text.text_medium Выйти
